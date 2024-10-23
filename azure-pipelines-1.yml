@@ -7,8 +7,10 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
-
+  name: tutukagent  # Or the name of your own agent pool
+  demands:
+  - Agent.Name -equals tuktuk01
+  
 strategy:
   matrix:
     Python38:
