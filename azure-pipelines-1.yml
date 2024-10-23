@@ -6,11 +6,11 @@
 trigger:
 - main
 
+
 pool:
   name: tutukagent  # Or the name of your own agent pool
   demands:
   - Agent.Name -equals tuktuk01
-  
 strategy:
   matrix:
     Python38:
@@ -26,6 +26,10 @@ steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
+    addToPath: true
+    installationPath: $(Agent.ToolsDirectory)/python/3.x
+  env:
+    GITHUB_TOKEN: $(github_token)
   displayName: 'Use Python $(python.version)'
 
 - script: |
@@ -36,4 +40,4 @@ steps:
 - script: |
     pip install pytest pytest-azurepipelines
     pytest
-  displayName: 'pytest'
+  displayName:
