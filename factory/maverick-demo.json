@@ -1,0 +1,9 @@
+{
+	"name": "maverick-demo",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7a57ee5f-7b9f-4335-8ade-761baf9c6585",
+		"tenantId": "16b3c013-d300-468d-ac64-7eda0820b6d3"
+	}
+}
